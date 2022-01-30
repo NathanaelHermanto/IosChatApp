@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D829D6C427A6F07300402C72 /* JSONUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D829D6C327A6F07300402C72 /* JSONUtils.swift */; };
 		D897827827A41DAF00D58375 /* Chat_App_0570619App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D897827727A41DAF00D58375 /* Chat_App_0570619App.swift */; };
 		D897827A27A41DAF00D58375 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D897827927A41DAF00D58375 /* ContentView.swift */; };
 		D897827C27A41DAF00D58375 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D897827B27A41DAF00D58375 /* Assets.xcassets */; };
@@ -14,6 +15,9 @@
 		D897828927A41DAF00D58375 /* Chat_App_0570619Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D897828827A41DAF00D58375 /* Chat_App_0570619Tests.swift */; };
 		D897829327A41DAF00D58375 /* Chat_App_0570619UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D897829227A41DAF00D58375 /* Chat_App_0570619UITests.swift */; };
 		D897829527A41DAF00D58375 /* Chat_App_0570619UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D897829427A41DAF00D58375 /* Chat_App_0570619UITestsLaunchTests.swift */; };
+		D89782A227A4229500D58375 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89782A127A4229500D58375 /* ChatView.swift */; };
+		D89782A427A4274000D58375 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89782A327A4274000D58375 /* InputView.swift */; };
+		D89782A727A69E3200D58375 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89782A627A69E3200D58375 /* Chat.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D829D6C327A6F07300402C72 /* JSONUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONUtils.swift; sourceTree = "<group>"; };
 		D897827427A41DAF00D58375 /* Chat-App_0570619.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chat-App_0570619.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D897827727A41DAF00D58375 /* Chat_App_0570619App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat_App_0570619App.swift; sourceTree = "<group>"; };
 		D897827927A41DAF00D58375 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +49,9 @@
 		D897828E27A41DAF00D58375 /* Chat-App_0570619UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Chat-App_0570619UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D897829227A41DAF00D58375 /* Chat_App_0570619UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat_App_0570619UITests.swift; sourceTree = "<group>"; };
 		D897829427A41DAF00D58375 /* Chat_App_0570619UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat_App_0570619UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D89782A127A4229500D58375 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		D89782A327A4274000D58375 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		D89782A627A69E3200D58375 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +106,10 @@
 				D897827927A41DAF00D58375 /* ContentView.swift */,
 				D897827B27A41DAF00D58375 /* Assets.xcassets */,
 				D897827D27A41DAF00D58375 /* Preview Content */,
+				D89782A127A4229500D58375 /* ChatView.swift */,
+				D89782A327A4274000D58375 /* InputView.swift */,
+				D89782A627A69E3200D58375 /* Chat.swift */,
+				D829D6C327A6F07300402C72 /* JSONUtils.swift */,
 			);
 			path = "Chat-App_0570619";
 			sourceTree = "<group>";
@@ -258,6 +270,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D897827A27A41DAF00D58375 /* ContentView.swift in Sources */,
+				D829D6C427A6F07300402C72 /* JSONUtils.swift in Sources */,
+				D89782A427A4274000D58375 /* InputView.swift in Sources */,
+				D89782A227A4229500D58375 /* ChatView.swift in Sources */,
+				D89782A727A69E3200D58375 /* Chat.swift in Sources */,
 				D897827827A41DAF00D58375 /* Chat_App_0570619App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,6 +435,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Chat-App_0570619/Preview Content\"";
+				DEVELOPMENT_TEAM = 23S568LSZ8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -447,6 +464,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Chat-App_0570619/Preview Content\"";
+				DEVELOPMENT_TEAM = 23S568LSZ8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
