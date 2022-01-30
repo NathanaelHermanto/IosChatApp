@@ -8,18 +8,31 @@
 import Foundation
 
 func writeJSON(msg: String, sender: Bool, name: String) {
-    let jsonString = "{\"message\": \"\(msg)\", \"sender\": \"\(sender)\"}"
+    
+    let message = [["Message": msg], ["Name": name], ["Sender": sender]]
 
     if let documentDirectory = FileManager.default.urls(for: .documentDirectory,
                                                         in: .userDomainMask).first {
-        let pathWithFilename = documentDirectory.appendingPathComponent("\(sender)Chat.json")
+        let fileUrl = documentDirectory.appendingPathComponent("\(name)Chat.json")
         do {
-            try jsonString.write(to: pathWithFilename,
-                                 atomically: true,
-                                 encoding: .utf8)
+            let data = try JSONSerialization.data(withJSONObject: message, options: [])
+                    try data.write(to: fileUrl, options: [])
+            print(fileUrl)
         } catch {
-            // Handle error
+            print(error)
         }
     }
 }
 
+//func readJson(name: String) {
+//    guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+//        let fileUrl = documentsDirectory.appendingPathComponent("\(name)Chat.json")
+//
+//        do {
+//            let data = try Data(contentsOf: fileUrl, options: [])
+//            guard let chat = try JSONSerialization.jsonObject(with: data, options: []) as? [[String: [String: String]]] else { return }
+//            print(data)
+//        } catch {
+//            print(error)
+//        }
+//}

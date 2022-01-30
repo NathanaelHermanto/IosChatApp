@@ -27,8 +27,8 @@ struct InputView: View {
                         print("No message to send")
                         return
                     }
-                    print(message)
                     writeJSON(msg: message, sender: isSender, name: name)
+                    readJson(name: name)
                 }
         
             Text("Message: \(message)")

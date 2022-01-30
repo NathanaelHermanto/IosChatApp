@@ -17,10 +17,4 @@ struct Message {
     }
 
 }
-
-struct chatHistory {
-    var msg: String
-    var sender: Bool
-    var entry: Int
-}
         
