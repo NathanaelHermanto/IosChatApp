@@ -7,32 +7,64 @@
 
 import Foundation
 
-func writeJSON(msg: String, sender: Bool, name: String) {
-    
-    let message = [["Message": msg], ["Name": name], ["Sender": sender]]
+func getPath(name: String) -> URL{
+    guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+        return URL(fileURLWithPath: "error")
+    }
+    let fileUrl = documentsDirectory.appendingPathComponent("\(name)Chat.json")
+    return fileUrl
+}
 
-    if let documentDirectory = FileManager.default.urls(for: .documentDirectory,
-                                                        in: .userDomainMask).first {
-        let fileUrl = documentDirectory.appendingPathComponent("\(name)Chat.json")
+func writeJSON(msg: String, sender: Bool, name: String) {
+    let message: Message = Message(message: msg, sender: sender, name: name)
+    let fileUrl = getPath(name: name)
+    
+    var chatHistory: [Message] = {
         do {
-            let data = try JSONSerialization.data(withJSONObject: message, options: [])
-                    try data.write(to: fileUrl, options: [])
-            print(fileUrl)
+            let data = try Data(contentsOf: fileUrl)
+            let decoder = JSONDecoder()
+            let messages = try decoder.decode([Message].self, from: data)
+            return messages
         } catch {
-            print(error)
+            print(error.localizedDescription)
+            return []
         }
+    }()
+    
+    chatHistory.append(message)
+    
+    do {
+        let encodeStringMessage = encodeJSON(message: chatHistory)
+        try encodeStringMessage.write(to: fileUrl, atomically: true, encoding: .utf8)
+        print(fileUrl)
+    } catch {
+        print(error)
     }
 }
 
-//func readJson(name: String) {
-//    guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
-//        let fileUrl = documentsDirectory.appendingPathComponent("\(name)Chat.json")
-//
-//        do {
-//            let data = try Data(contentsOf: fileUrl, options: [])
-//            guard let chat = try JSONSerialization.jsonObject(with: data, options: []) as? [[String: [String: String]]] else { return }
-//            print(data)
-//        } catch {
-//            print(error)
-//        }
-//}
+func readJSON(name: String) -> String {
+    let fileUrl = getPath(name: name)
+    let jsonDecoder = JSONDecoder()
+    
+    do {
+        let data = try Data(contentsOf: fileUrl, options: [])
+        let decodedMessage = try jsonDecoder.decode([Message].self, from: data)
+        return encodeJSON(message: decodedMessage)
+    } catch {
+        return "error"
+    }
+    
+}
+
+func encodeJSON(message: [Message]) -> String {
+    let jsonEncoder = JSONEncoder()
+    jsonEncoder.outputFormatting = .prettyPrinted
+    
+    do {
+        let encodeMessage = try jsonEncoder.encode(message)
+        let encodeStringMessage = String(data: encodeMessage, encoding: .utf8)!
+        return encodeStringMessage
+    } catch {
+        return "error"
+    }
+}
