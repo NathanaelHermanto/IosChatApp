@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D805BFB127ABE94E00FCBFE9 /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = D805BFB027ABE94E00FCBFE9 /* ChatBubble.swift */; };
 		D829D6C427A6F07300402C72 /* JSONUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D829D6C327A6F07300402C72 /* JSONUtils.swift */; };
 		D897827827A41DAF00D58375 /* Chat_App_0570619App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D897827727A41DAF00D58375 /* Chat_App_0570619App.swift */; };
 		D897827A27A41DAF00D58375 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D897827927A41DAF00D58375 /* ContentView.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D805BFB027ABE94E00FCBFE9 /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
 		D829D6C327A6F07300402C72 /* JSONUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONUtils.swift; sourceTree = "<group>"; };
 		D897827427A41DAF00D58375 /* Chat-App_0570619.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chat-App_0570619.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D897827727A41DAF00D58375 /* Chat_App_0570619App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat_App_0570619App.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				D89782A327A4274000D58375 /* InputView.swift */,
 				D89782A627A69E3200D58375 /* Chat.swift */,
 				D829D6C327A6F07300402C72 /* JSONUtils.swift */,
+				D805BFB027ABE94E00FCBFE9 /* ChatBubble.swift */,
 			);
 			path = "Chat-App_0570619";
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				D89782A227A4229500D58375 /* ChatView.swift in Sources */,
 				D89782A727A69E3200D58375 /* Chat.swift in Sources */,
 				D897827827A41DAF00D58375 /* Chat_App_0570619App.swift in Sources */,
+				D805BFB127ABE94E00FCBFE9 /* ChatBubble.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

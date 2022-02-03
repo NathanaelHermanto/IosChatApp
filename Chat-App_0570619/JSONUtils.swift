@@ -51,7 +51,7 @@ func readJSON(name: String) -> String {
         let decodedMessage = try jsonDecoder.decode([Message].self, from: data)
         return encodeJSON(message: decodedMessage)
     } catch {
-        return "error"
+        return "No chat"
     }
     
 }
