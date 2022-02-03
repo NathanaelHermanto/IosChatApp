@@ -68,3 +68,13 @@ func encodeJSON(message: [Message]) -> String {
         return "error"
     }
 }
+
+func decodeJSON(jsonData: String) -> [Message] {
+    do {
+        let data = Data(jsonData.utf8)
+        let decodedJSON = try JSONDecoder().decode([Message].self, from: data)
+        return decodedJSON
+    } catch {
+        return [Message(message: "error", sender: false, name: "error")]
+    }
+}

@@ -12,25 +12,23 @@ struct ChatView: View {
     
     var body: some View {
         let chatData = readJSON(name: name)
+        let chatHistory = decodeJSON(jsonData: chatData)
         
         NavigationView{
             VStack{
-                
-                
-                Text(chatData)
-                    .padding(10)
-                    .foregroundColor(Color.white)
-                    .background(Color.blue)
-                    .cornerRadius(10)
-                
+                ForEach(chatHistory, id: \.self){ chat in
+                    ChatBubble(message: chat.message == "error" ? "no message" : chat.message
+                               ,isSender: chat.sender)
+                }
+
                 NavigationLink(destination: InputView(name: name)) {
-                        Image(systemName: "plus.message.fill")
-                            .resizable()
-                            .frame(width: 48.0, height: 48.0)
-                            .offset(x: 125)
-                            .padding()
-                    }
-                    .navigationTitle(name)
+                    Image(systemName: "plus.message.fill")
+                        .resizable()
+                        .frame(width: 48.0, height: 48.0)
+                        //.offset(x: 125, y: 200)
+                        .padding()
+                }
+                .navigationTitle(name)
     
             }
         }

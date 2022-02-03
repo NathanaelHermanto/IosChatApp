@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct Message: Codable {
+struct Message: Codable, Hashable {
     var name: String
-    var msg: String
+    var message: String
     var sender: Bool
     
     init(message: String, sender: Bool, name: String){
         self.name = name
-        self.msg = message
+        self.message = message
         self.sender = sender
     }
 

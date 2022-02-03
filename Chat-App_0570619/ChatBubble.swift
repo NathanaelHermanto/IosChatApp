@@ -11,12 +11,11 @@ struct ChatBubble: View {
     var message: String
     var isSender: Bool
     var body: some View {
-        
         Text(message)
-                    .padding(10)
-                    .foregroundColor(Color.white)
-                    .background(isSender ? Color.blue : Color.gray)
-                    .cornerRadius(10)
+            .padding()
+            .foregroundColor(isSender ? Color.white : Color.black)
+            .background(isSender ? Color.blue : Color.init(UIColor.lightGray))
+            .cornerRadius(15)
     }
 }
 
