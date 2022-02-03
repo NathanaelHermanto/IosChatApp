@@ -20,12 +20,3 @@ struct Message: Codable {
 
 }
 
-//struct ChatHistory: Codable {
-//    var history: [Message] = []
-//
-//    mutating func addMessage(message: Message){
-//        history.append(message)
-//    }
-//
-//}
-        

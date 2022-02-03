@@ -7,14 +7,15 @@
 
 import SwiftUI
 
-var chatPartners: [String] = [
-   "Maria",
-   "Bob",
-   "Carl"
-]
+
 
 struct ContentView: View {
     @State var name: String = ""
+    @State var chatPartners: [String] = [
+       "Maria",
+       "Bob",
+       "Carl"
+    ]
     var body: some View {
         NavigationView{
             VStack{
