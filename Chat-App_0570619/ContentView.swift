@@ -20,7 +20,7 @@ struct ContentView: View {
         NavigationView{
             VStack{
                 ZStack{
-                    Color.init(UIColor.lightGray)
+                    Color.init(UIColor.lightText)
                     VStack(spacing: 30){
                         Text("Contacts")
                         ForEach(chatPartners, id: \.self){
