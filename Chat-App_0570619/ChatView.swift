@@ -18,15 +18,17 @@ struct ChatView: View {
             VStack (alignment: isSender ? .trailing : .leading) {
                 ZStack {
                     Color.init(UIColor.lightText)
-                    VStack(alignment: .trailing) {
-                        ForEach(chatHistory, id: \.self){ chat in
-                            ChatBubble(message: chat.message == "error" ? "no message" : chat.message
-                                       ,isSender: chat.sender)
-                                .frame(idealWidth: 100, maxWidth: .infinity, alignment: chat.sender ? .trailing : .leading)
-                                .padding(chat.sender ? .trailing : .leading, 10)
+                    ScrollView{
+                        VStack(alignment: .trailing) {
+                            ForEach(chatHistory, id: \.self){ chat in
+                                ChatBubble(message: chat.message == "error" ? "no message" : chat.message
+                                           ,isSender: chat.sender)
+                                    .frame(idealWidth: 100, maxWidth: .infinity, alignment: chat.sender ? .trailing : .leading)
+                                    .padding(chat.sender ? .trailing : .leading, 10)
+                            }
                         }
                     }
-                    
+                    .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
                 }
                 .padding()
                 .shadow(color: Color.init(UIColor.lightGray), radius: 5)
