@@ -20,7 +20,7 @@ struct ChatView: View {
                     Color.init(UIColor.lightText)
                     VStack(alignment: .trailing) {
                         ForEach(chatHistory, id: \.self){ chat in
-                            ChatBubble(message: chat.message == "error" ? "error/no message" : chat.message
+                            ChatBubble(message: chat.message == "error" ? "no message" : chat.message
                                        ,isSender: chat.sender)
                                 .frame(idealWidth: 100, maxWidth: .infinity, alignment: chat.sender ? .trailing : .leading)
                                 .padding(chat.sender ? .trailing : .leading, 10)

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Message: Codable, Hashable {
     var name: String
@@ -19,4 +20,5 @@ struct Message: Codable, Hashable {
     }
 
 }
+
 
