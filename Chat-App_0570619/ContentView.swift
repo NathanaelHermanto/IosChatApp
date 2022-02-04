@@ -86,6 +86,10 @@ struct ContentView: View {
                         )
                     .padding(.init(top: 0, leading: 17, bottom: 17, trailing: 17))
                     .onSubmit {
+                        guard name.isEmpty == false else {
+                            print("Name is empty")
+                            return
+                        }
                         let id = chatPartners.last!.id + 1
                         chatPartners.append(Person(id: id, name: name))
                     }
