@@ -36,7 +36,6 @@ func writeJSON(msg: String, sender: Bool, name: String) {
     do {
         let encodeStringMessage = encodeJSON(message: chatHistory)
         try encodeStringMessage.write(to: fileUrl, atomically: true, encoding: .utf8)
-        print(fileUrl)
     } catch {
         print(error)
     }
