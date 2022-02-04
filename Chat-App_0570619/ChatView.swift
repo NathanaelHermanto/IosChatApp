@@ -14,7 +14,6 @@ struct ChatView: View {
         let chatData = readJSON(name: name)
         let chatHistory = decodeJSON(jsonData: chatData)
         
-        
         NavigationView{
             VStack (alignment: isSender ? .trailing : .leading) {
                 ZStack {
@@ -23,6 +22,8 @@ struct ChatView: View {
                         ForEach(chatHistory, id: \.self){ chat in
                             ChatBubble(message: chat.message == "error" ? "no message" : chat.message
                                        ,isSender: chat.sender)
+                                .frame(idealWidth: 100, maxWidth: .infinity, alignment: chat.sender ? .trailing : .leading)
+                                .padding(chat.sender ? .trailing : .leading, 10)
                         }
                     }
                     
