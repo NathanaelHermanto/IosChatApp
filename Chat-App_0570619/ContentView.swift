@@ -30,7 +30,7 @@ struct ContentView: View {
                     Color.init(UIColor.lightText)
                     ScrollView {
                         VStack(spacing: 30){
-                            HStack(alignment: .bottom, spacing: 55) {
+                            HStack(alignment: .top, spacing: 55) {
                                 VStack{
                                     ForEach(chatPartners, id: \.self){
                                         chatPartner in
