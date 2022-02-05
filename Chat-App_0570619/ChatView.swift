@@ -58,10 +58,6 @@ struct ChatView: View {
             }
         }
     }
-    
-    func reloadMessages() {
-        
-    }
 }
 
 struct ChatView_Previews: PreviewProvider {
