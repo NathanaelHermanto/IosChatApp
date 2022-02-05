@@ -28,7 +28,6 @@ struct InputView: View {
                         return
                     }
                     writeJSON(msg: message, sender: isSender, name: name)
-                    print(readJSON(name: name))
                 }
         
             Text("Message: \(message)")

@@ -16,52 +16,61 @@ struct ContentView: View {
         Person(id: 2, name: "Bob"),
         Person(id: 3, name: "Carl"),
         Person(id: 4, name: "Ron"),
+        Person(id: 5, name: "Harry"),
+        Person(id: 6, name: "Newt"),
+        Person(id: 7, name: "Tony"),
+        Person(id: 8, name: "Steve"),
+        Person(id: 9, name: "Natasha"),
+        Person(id: 10, name: "Clint"),
     ]
     var body: some View {
         NavigationView{
             VStack{
                 ZStack{
                     Color.init(UIColor.lightText)
-                    VStack(spacing: 30){
-                        Text("Contacts")
-                            .padding()
-                        HStack(alignment: .bottom, spacing: 5) {
-                            VStack{
-                                ForEach(chatPartners, id: \.self){
-                                    chatPartner in
-                                    if(isOdd(number: chatPartner.id)){
-                                        NavigationLink(destination: ChatView(name: chatPartner.name)) {
-                                            Text(chatPartner.name.prefix(2))
-                                                .padding()
-                                                .foregroundColor(Color.white)
-                                                .background(Color.init(chatPartner.color))
-                                                .cornerRadius(90)
-                                                .padding(5)
+                    ScrollView {
+                        VStack(spacing: 30){
+                            HStack(alignment: .top, spacing: 55) {
+                                VStack{
+                                    ForEach(chatPartners, id: \.self){
+                                        chatPartner in
+                                        if(isOdd(number: chatPartner.id)){
+                                            NavigationLink(destination: ChatView(name: chatPartner.name)) {
+                                                Text(chatPartner.name.prefix(2))
+                                                    .padding(25)
+                                                    .foregroundColor(Color.white)
+                                                    .background(Color.init(chatPartner.color))
+                                                    .cornerRadius(90)
+                                                    .padding(EdgeInsets(top: 5, leading: 25, bottom: 5, trailing: 0))
+                                                    .font(.system(size: 25, weight: .medium))
+                                            }
                                         }
                                     }
                                 }
-                            }
-                            
-                            VStack{
-                                ForEach(chatPartners, id: \.self){
-                                    chatPartner in
-                                    if(!isOdd(number: chatPartner.id)){
-                                        NavigationLink(destination: ChatView(name: chatPartner.name)) {
-                                            Text(chatPartner.name.prefix(2))
-                                                .padding()
-                                                .foregroundColor(Color.white)
-                                                .background(Color.init(chatPartner.color))
-                                                .cornerRadius(90)
-                                                .padding(5)
+                                
+                                VStack{
+                                    ForEach(chatPartners, id: \.self){
+                                        chatPartner in
+                                        if(!isOdd(number: chatPartner.id)){
+                                            NavigationLink(destination: ChatView(name: chatPartner.name)) {
+                                                Text(chatPartner.name.prefix(2))
+                                                    .padding(25)
+                                                    .foregroundColor(Color.white)
+                                                    .background(Color.init(chatPartner.color))
+                                                    .cornerRadius(90)
+                                                    .padding(EdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 25))
+                                                    .font(.system(size: 25, weight: .medium))
+                                            }
                                         }
                                     }
                                 }
+                                
                             }
                             
                         }
-                        
                     }
                     .navigationTitle("Chats")
+                    .padding(EdgeInsets(top: 25, leading: 0, bottom: 25, trailing: 0))
                 }
                 .padding()
                 .shadow(color: Color.init(UIColor.lightGray), radius: 5)
@@ -77,6 +86,10 @@ struct ContentView: View {
                         )
                     .padding(.init(top: 0, leading: 17, bottom: 17, trailing: 17))
                     .onSubmit {
+                        guard name.isEmpty == false else {
+                            print("Name is empty")
+                            return
+                        }
                         let id = chatPartners.last!.id + 1
                         chatPartners.append(Person(id: id, name: name))
                     }
